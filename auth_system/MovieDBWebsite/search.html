@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieDB - Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Removed onload, performSearch is called from script.js DOMContentLoaded -->
+<body class="search-page">
+    <header class="header">
+        <div class="logo" onclick="window.location.href='home.html'">🎬 MovieDB</div>
+        <div class="search-bar">
+            <!-- Input value will be set by performSearch in script.js -->
+            <input type="text" id="searchInput" placeholder="Search movies, TV shows...">
+             <!-- Button now triggers performSearch which reads input & params -->
+            <button onclick="performSearch()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="auth-buttons">
+            <span id="user-info"></span>
+             <!-- Corrected link if user is not logged in -->
+            <a href="/auth_system/LoginRegistrationPage/index.html" id="authLink">Login/Register</a>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <a href="home.html"><i class="fas fa-home"></i> Home</a>
+        <a href="movies.html"><i class="fas fa-film"></i> Movies</a>
+        <a href="tv-shows.html"><i class="fas fa-tv"></i> TV Shows</a>
+        <a href="my-list.html"><i class="fas fa-list"></i> My List</a>
+    </nav>
+
+    <main class="search-container">
+        <h1>Search Results</h1>
+        <div class="search-options">
+            <!-- Active class will be set by performSearch in script.js -->
+            <button class="search-option" onclick="setSearchType('multi')">All</button>
+            <button class="search-option" onclick="setSearchType('movie')">Movies</button>
+            <button class="search-option" onclick="setSearchType('tv')">TV Shows</button>
+        </div>
+        <div id="searchResults" class="search-results">
+             <!-- Results will be loaded here by searchContent function -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+            <p class="footer-text">© 2023 MovieDB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Inline script removed, core logic in script.js -->
+    <!-- Ensure performSearch() and setSearchType() exist in script.js -->
+</body>
+</html>
